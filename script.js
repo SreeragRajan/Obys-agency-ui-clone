@@ -102,17 +102,17 @@ function cursorAnimation() {
 
   var videoContainer = document.querySelector("#video-container");
   var video = document.querySelector("#video-container video")
-  videoContainer.addEventListener("mouseenter", function () {
+
     videoContainer.addEventListener("mousemove", function (dets) {
       gsap.to(".mousefollower", {
         opacity: 0
       });
       gsap.to("#video-cursor", {
-        left: dets.x - 570,
-        y: dets.y - 300,
+        left: dets.clientX - 400 + "px",
+        top: dets.clientY - 200 + "px",
       });
     });
-  });
+  
   videoContainer.addEventListener("mouseleave", function () {
     gsap.to(".mousefollower", {
       opacity: 1
